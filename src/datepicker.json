@@ -1,0 +1,77 @@
+{
+  "name": "Datepicker",
+  "props": [
+    {
+      "type": ["Boolean"],
+      "default": false,
+      "prop": "range-mode",
+      "description": "Allows selection of date ranges."
+    },
+    {
+      "type": ["Date", "String", "Array"],
+      "default": "undefined",
+      "prop": "v-model",
+      "description": "v-model is used to return date after selection. Date is in `YYYY-MM-DD` format"
+    },
+    {
+      "type": ["String"],
+      "default": "empty string",
+      "prop": "locale",
+      "description": "This prop is only used to display names of months and weekdays"
+    },
+    {
+      "type": ["Boolean"],
+      "default": true,
+      "prop": "monday-first-weekday",
+      "description": "Week starts on monday"
+    },
+    {
+      "type": ["Object"],
+      "default": {},
+      "prop": "today-format",
+      "description": "Format of the today date displayed in the footer"
+    },
+    {
+      "type": ["String"],
+      "default": "fade",
+      "prop": "transition-name",
+      "description": "Transition when switching months or years. Valid values are 'fade', 'slide' or `empty string` for no transition"
+    },
+    {
+      "type": ["Boolean"],
+      "default": true,
+      "prop": "auto-emit",
+      "description": "If this prop is true then v-model is updated immedietely after clicking on the day"
+    },
+    {
+      "type": ["String"],
+      "default": "date",
+      "prop": "model-format",
+      "description": "Format of the v-model. Valid values are 'date', 'array' or 'string'"
+    },
+    {
+      "type": ["Array", "Date", "String"],
+      "default": "undefined",
+      "prop": "min-date",
+      "description": ""
+    },
+    {
+      "type": ["Array", "Date", "String"],
+      "default": "undefined",
+      "prop": "max-date",
+      "description": ""
+    },
+    {
+      "type": ["Object"],
+      "default": {},
+      "prop": "custom-variants",
+      "description": "Custom variants can be used to add variants to the day. These variants can then be used to style days with the classes from 'class:user' prop"
+    },
+    {
+      "type": ["Boolean"],
+      "default": true,
+      "prop": "adjacent-months-days",
+      "description": "Display days from previous and next month."
+    }
+  ]
+}
