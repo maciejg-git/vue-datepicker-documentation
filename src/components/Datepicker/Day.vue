@@ -18,35 +18,35 @@ let props = defineProps({
   date: {
     type: [Date, Number, String],
   },
-  ["class:selected"]: {
+  ["classSelected"]: {
     type: String,
     default: "",
   },
-  ["class:selectedFirst"]: {
+  ["classSelectedFirst"]: {
     type: String,
     default: "",
   },
-  ["class:selectedLast"]: {
+  ["classSelectedLast"]: {
     type: String,
     default: "",
   },
-  ["class:selectedMid"]: {
+  ["classSelectedMid"]: {
     type: String,
     default: "",
   },
-  ["class:today"]: {
+  ["classToday"]: {
     type: String,
     default: "",
   },
-  ["class:adjacent"]: {
+  ["classAdjacent"]: {
     type: String,
     default: "",
   },
-  ["class:partiallySelected"]: {
+  ["classPartiallySelected"]: {
     type: String,
     default: "",
   },
-  ["class:user"]: {
+  ["classUser"]: {
     type: [Function, String],
     default: undefined,
   },
@@ -61,24 +61,24 @@ let getClassesByVariant = () => {
   let c = "";
 
   if (variant.value === "adjacent") {
-    return props["class:adjacent"];
+    return props["classAdjacent"];
   }
 
-  if (variant.value.selected) c += props["class:selected"] + " ";
-  else if (variant.value.selectedFirst) c += props["class:selectedFirst"] + " ";
-  else if (variant.value.selectedLast) c += props["class:selectedLast"] + " ";
-  else if (variant.value.selectedMid) c += props["class:selectedMid"] + " ";
+  if (variant.value.selected) c += props["classSelected"] + " ";
+  else if (variant.value.selectedFirst) c += props["classSelectedFirst"] + " ";
+  else if (variant.value.selectedLast) c += props["classSelectedLast"] + " ";
+  else if (variant.value.selectedMid) c += props["classSelectedMid"] + " ";
   else if (variant.value.partiallySelected)
-    c += props["class:partiallySelected"] + " ";
+    c += props["classPartiallySelected"] + " ";
 
-  if (variant.value.today) c += props["class:today"] + " ";
+  if (variant.value.today) c += props["classToday"] + " ";
 
-  if (props["class:user"]) {
-    if (typeof props["class:user"] === "function") {
+  if (props["classUser"]) {
+    if (typeof props["classUser"] === "function") {
       c += props["class:user"](props.date, variant.value);
     }
-    if (typeof props["class:user"] === "string") {
-      c += props["class:user"];
+    if (typeof props["classUser"] === "string") {
+      c += props["classUser"];
     }
   }
 

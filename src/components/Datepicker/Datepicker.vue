@@ -218,7 +218,7 @@ let dateToModelValue = (value) => {
     return value;
   }
   if (props.modelFormat === "array") {
-    return [value.getFullYear(), value.getMonth(), value.getDate()];
+    return [value.getFullYear(), value.getMonth() + 1, value.getDate()];
   }
   if (props.modelFormat === "string") {
     return [
@@ -269,7 +269,7 @@ let rangeSelectionStates = {
   UNSELECTED: 0,
   FROM_SELECTED: 1,
   TO_SELECTED: 2,
-}
+};
 
 let selectedSingle = ref("");
 let selectedRange = ref([]);
@@ -377,5 +377,5 @@ provide("mouseOverDate", mouseOverDate);
 
 provide("customVariants", props.customVariants);
 provide("transition", { transitionName, transitionDirection });
-provide("rangeSelectionStates", rangeSelectionStates)
+provide("rangeSelectionStates", rangeSelectionStates);
 </script>
